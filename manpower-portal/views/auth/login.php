@@ -389,49 +389,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             margin-bottom: 28px;
         }
 
-        /* Quick Demo Credentials Box */
-        .demo-credentials-pill {
-            background: #F8FAFC;
-            border: 1px dashed #CBD5E1;
-            border-radius: 12px;
-            padding: 12px 14px;
-            margin-bottom: 24px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 12px;
-        }
-
-        .demo-info-text {
-            font-size: 0.78rem;
-            color: #475569;
-            margin: 0;
-            line-height: 1.35;
-        }
-
-        .demo-roles-btn-group {
-            display: flex;
-            gap: 6px;
-            flex-shrink: 0;
-        }
-
-        .demo-chip {
-            border: 1px solid #E2E8F0;
-            background: #FFFFFF;
-            color: #334155;
-            font-size: 0.72rem;
-            font-weight: 700;
-            padding: 4px 8px;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-
-        .demo-chip:hover {
-            background: #0F172A;
-            color: #FFFFFF;
-            border-color: #0F172A;
-        }
 
         /* Custom Input Groups */
         .form-label-custom {
@@ -765,16 +722,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         </div>
                     <?php endif; ?>
 
-                    <!-- Quick Demo Credentials Switcher for Evaluators -->
-                    <div class="demo-credentials-pill">
-                        <p class="demo-info-text">
-                            <strong>Quick Fill:</strong> Test enterprise roles with preloaded credentials
-                        </p>
-                        <div class="demo-roles-btn-group">
-                            <button type="button" class="demo-chip" onclick="fillCredentials('admin@prayas.org', 'admin123')">Super Admin</button>
-                            <button type="button" class="demo-chip" onclick="fillCredentials('recruiter@prayas.org', 'recruiter123')">Recruiter</button>
-                        </div>
-                    </div>
 
                     <!-- Auth Form -->
                     <form method="POST" action="<?= app_url('/views/auth/login.php') ?>" id="loginForm" novalidate>
@@ -878,16 +825,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             });
         }
 
-        // Quick fill demo credentials
-        function fillCredentials(email, pwd) {
-            const emailInput = document.getElementById('email');
-            const pwdInput = document.getElementById('password');
-            if (emailInput && pwdInput) {
-                emailInput.value = email;
-                pwdInput.value = pwd;
-                emailInput.focus();
-            }
-        }
     </script>
 </body>
 </html>
