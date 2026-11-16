@@ -97,14 +97,16 @@
       font-size: 20px;
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
       line-height: 1.1;
+      text-decoration: none;
     }
 
     .logo img {
-      height: 34px;
+      height: 38px;
       width: auto;
       display: block;
+      object-fit: contain;
     }
 
     .logo .logo-text {
@@ -117,6 +119,11 @@
       font-weight: 500;
       color: var(--ink-soft);
       letter-spacing: 0.03em;
+    }
+
+    @media (max-width: 540px) {
+      .logo img { height: 32px; }
+      .logo .logo-text span { display: none; }
     }
 
     nav.desktop-nav {
@@ -1806,7 +1813,7 @@
 
 <body>
   <header>
-    <div class="nav-row"><a href="index.html" class="logo"><span class="logo-text">PRAYAS<span>Building India's
+    <div class="nav-row"><a href="index.html" class="logo"><img src="images/logo.png" alt="PRAYAS Logo"><span class="logo-text">PRAYAS<span>Building India's
             Manufacturing Workforce</span></span></a>
       <nav class="desktop-nav"><a href="index.html">Home</a><span class="dd"><a href="about.html">About Us &#9662;</a>
           <div><a href="about.html#about-why">Why PRAYAS?</a><a href="about.html#about-vision">Vision &amp;
