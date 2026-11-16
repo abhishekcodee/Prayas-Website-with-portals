@@ -1,0 +1,28 @@
+# Environment & Secrets
+.env
+*.env.local
+
+# Logs
+logs/
+*.log
+
+# Database runtime files
+database/*.sqlite
+database/*.sqlite-journal
+student-portal/*.sqlite
+
+# Uploads & User Media (keep directory structure)
+student-portal/uploads/videos/*
+student-portal/uploads/photos/*
+student-portal/uploads/resumes/*
+student-portal/uploads/govt-id/*
+student-portal/uploads/pwbd/*
+!student-portal/uploads/**/.gitkeep
+
+# Composer vendor
+student-portal/vendor/
+
+# OS / Editor files
+.DS_Store
+Thumbs.db
+.vscode/

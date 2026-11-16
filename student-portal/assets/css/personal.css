@@ -1,0 +1,2809 @@
+/*==========================================
+    PRAYAS Recruitment Portal
+    Premium Enterprise Theme
+===========================================*/
+
+:root{
+
+    --primary:#2563eb;
+    --primary-dark:#1e40af;
+    --secondary:#3b82f6;
+
+    --success:#16a34a;
+    --danger:#ef4444;
+    --warning:#f59e0b;
+
+    --bg:#f4f7fc;
+    --card:#ffffff;
+
+    --text:#0f172a;
+    --text-light:#64748b;
+
+    --border:#dbe3ef;
+
+    --shadow-sm:0 5px 15px rgba(15,23,42,.05);
+    --shadow:0 15px 40px rgba(15,23,42,.08);
+    --shadow-lg:0 25px 60px rgba(15,23,42,.12);
+
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+
+scroll-behavior:smooth;
+
+}
+
+body{
+
+    font-family:'Segoe UI',sans-serif;
+
+    background:
+
+    radial-gradient(circle at top right,#dbeafe 0%,transparent 30%),
+
+    radial-gradient(circle at bottom left,#ecfeff 0%,transparent 35%),
+
+    var(--bg);
+
+    color:var(--text);
+
+}
+
+
+/*============================
+Container
+=============================*/
+
+.container{
+
+max-width:1280px;
+
+}
+
+
+/*============================
+Main Card
+=============================*/
+
+.card{
+
+    background:#fff;
+
+    border:none;
+
+    border-radius:22px;
+
+    overflow:hidden;
+
+    box-shadow:var(--shadow);
+
+    transition:.35s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:var(--shadow-lg);
+
+}
+
+
+/*============================
+Header
+=============================*/
+
+.card-header{
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding:40px;
+
+    background:
+
+    linear-gradient(
+    135deg,
+    #1e3a8a,
+    #2563eb,
+    #3b82f6
+    );
+
+    color:white;
+
+}
+
+
+/* Decorative Circle */
+
+.card-header::before{
+
+content:"";
+
+position:absolute;
+
+width:220px;
+
+height:220px;
+
+left:-80px;
+
+bottom:-90px;
+
+background:rgba(255,255,255,.08);
+
+border-radius:50%;
+
+}
+
+
+/* Decorative Circle */
+
+.card-header::after{
+
+content:"";
+
+position:absolute;
+
+width:280px;
+
+height:280px;
+
+right:-100px;
+
+top:-100px;
+
+background:rgba(255,255,255,.06);
+
+border-radius:50%;
+
+}
+
+
+.card-header h3{
+
+    position:relative;
+
+    z-index:2;
+
+    font-size:30px;
+
+    font-weight:700;
+
+    line-height:1.5;
+
+}
+
+.card-header p{
+
+    position:relative;
+
+    z-index:2;
+
+    margin-top:15px;
+
+    font-size:15px;
+
+    line-height:1.8;
+
+    opacity:.95;
+
+}
+
+
+/*============================
+Progress
+=============================*/
+
+.progress{
+
+height:10px;
+
+background:#dbeafe;
+
+border-radius:0;
+
+}
+
+.progress-bar{
+
+background:
+
+linear-gradient(
+90deg,
+#22c55e,
+#16a34a
+);
+
+}
+
+
+/*============================
+Body
+=============================*/
+
+.card-body{
+
+padding:45px;
+
+background:white;
+
+}
+
+/*==========================================
+      SECTION TITLES
+===========================================*/
+
+h4{
+
+    display:flex;
+    align-items:center;
+    gap:14px;
+
+    font-size:24px;
+    font-weight:700;
+
+    color:var(--text);
+
+    margin:50px 0 28px;
+
+    padding-bottom:15px;
+
+    border-bottom:2px solid #eef2f7;
+
+    position:relative;
+
+}
+
+h4::before{
+
+    content:"";
+
+    width:7px;
+    height:32px;
+
+    border-radius:10px;
+
+    background:
+
+    linear-gradient(
+    to bottom,
+    var(--primary),
+    var(--secondary)
+    );
+
+}
+
+
+/*==========================================
+      LABELS
+===========================================*/
+
+label{
+
+    display:block;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    color:#334155;
+
+    margin-bottom:8px;
+
+    letter-spacing:.3px;
+
+}
+
+.text-danger{
+
+    color:#ef4444!important;
+
+    font-weight:700;
+
+}
+
+
+/*==========================================
+      FORM GROUP
+===========================================*/
+
+.mb-3{
+
+    margin-bottom:24px!important;
+
+}
+
+
+/*==========================================
+      INPUTS
+===========================================*/
+
+.form-control,
+.form-select{
+
+    height:54px;
+
+    border-radius:14px;
+
+    border:1px solid var(--border);
+
+    background:#fff;
+
+    color:var(--text);
+
+    font-size:15px;
+
+    padding-left:16px;
+    padding-right:16px;
+
+    transition:.25s ease;
+
+}
+
+
+/*==========================================
+      TEXTAREA
+===========================================*/
+
+textarea.form-control{
+
+    height:auto;
+
+    min-height:130px;
+
+    padding-top:15px;
+
+    resize:vertical;
+
+}
+
+
+/*==========================================
+      PLACEHOLDER
+===========================================*/
+
+.form-control::placeholder{
+
+    color:#94a3b8;
+
+}
+
+
+/*==========================================
+      HOVER
+===========================================*/
+
+.form-control:hover,
+.form-select:hover{
+
+    border-color:#93c5fd;
+
+}
+
+
+/*==========================================
+      FOCUS
+===========================================*/
+
+.form-control:focus,
+.form-select:focus{
+
+    border-color:var(--primary);
+
+    box-shadow:
+
+    0 0 0 5px rgba(37,99,235,.12);
+
+}
+
+
+/*==========================================
+      READ ONLY
+===========================================*/
+
+.form-control[readonly]{
+
+    background:#f8fafc;
+
+    color:#64748b;
+
+    font-weight:600;
+
+}
+
+
+/*==========================================
+      DISABLED
+===========================================*/
+
+.form-control:disabled,
+.form-select:disabled{
+
+    background:#f1f5f9;
+
+}
+
+
+/*==========================================
+      FILE INPUT
+===========================================*/
+
+input[type=file]{
+
+    padding:12px;
+
+    height:auto;
+
+}
+
+
+/*==========================================
+      DATE INPUT
+===========================================*/
+
+input[type=date]{
+
+    cursor:pointer;
+
+}
+
+
+/*==========================================
+      SELECT
+===========================================*/
+
+.form-select{
+
+    cursor:pointer;
+
+}
+
+
+/*==========================================
+      CHECKBOX
+===========================================*/
+
+.form-check{
+
+    background:#f8fafc;
+
+    border:1px solid #e2e8f0;
+
+    border-radius:14px;
+
+    padding:16px 18px;
+
+    margin-bottom:18px;
+
+    transition:.3s;
+
+}
+
+.form-check:hover{
+
+    background:white;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.05);
+
+}
+
+.form-check-input{
+
+    width:20px;
+
+    height:20px;
+
+    cursor:pointer;
+
+}
+
+.form-check-label{
+
+    margin-left:8px;
+
+    cursor:pointer;
+
+}
+
+
+/*==========================================
+      HR
+===========================================*/
+
+hr{
+
+    margin:55px 0;
+
+    border:none;
+
+    height:1px;
+
+    background:#e2e8f0;
+
+}
+
+
+/*==========================================
+      SMALL TEXT
+===========================================*/
+
+small{
+
+    color:#64748b;
+
+}
+
+
+/*==========================================
+      LINKS
+===========================================*/
+
+a{
+
+    text-decoration:none;
+
+}
+
+a:hover{
+
+    text-decoration:underline;
+
+}
+
+
+/*==========================================
+      INVALID
+===========================================*/
+
+.is-invalid{
+
+    border-color:#ef4444!important;
+
+}
+
+.is-invalid:focus{
+
+    box-shadow:0 0 0 4px rgba(239,68,68,.12);
+
+}
+
+
+/*==========================================
+      VALID
+===========================================*/
+
+.is-valid{
+
+    border-color:#16a34a!important;
+
+}
+
+.is-valid:focus{
+
+    box-shadow:0 0 0 4px rgba(22,163,74,.12);
+
+}
+
+/*==========================================
+            PREMIUM SECTION CARDS
+==========================================*/
+
+.card.shadow-sm{
+
+    border:none!important;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    background:#fff;
+
+    box-shadow:0 12px 30px rgba(15,23,42,.06)!important;
+
+    transition:.35s;
+
+    margin-bottom:30px;
+
+}
+
+.card.shadow-sm:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 18px 45px rgba(15,23,42,.10)!important;
+
+}
+
+
+/*==========================================
+          FAMILY CARD HEADER
+==========================================*/
+
+.card.shadow-sm .card-header{
+
+    padding:18px 25px;
+
+    border:none;
+
+    background:linear-gradient(135deg,#2563eb,#1d4ed8);
+
+}
+
+.card.shadow-sm .card-header h5{
+
+    margin:0;
+
+    color:#fff;
+
+    font-size:18px;
+
+    font-weight:700;
+
+}
+
+.card.shadow-sm .card-body{
+
+    padding:30px;
+
+}
+
+
+/*==========================================
+            LANGUAGE CARD
+==========================================*/
+
+.languageRow{
+
+    background:#fff;
+
+    border:1px solid #e5e7eb;
+
+    border-radius:18px;
+
+    padding:20px;
+
+    margin-bottom:18px;
+
+    transition:.35s;
+
+}
+
+.languageRow:hover{
+
+    border-color:#bfdbfe;
+
+    transform:translateY(-3px);
+
+    box-shadow:0 12px 30px rgba(37,99,235,.10);
+
+}
+
+
+/*==========================================
+            SIBLING CARD
+==========================================*/
+
+.sibling-card{
+
+    border:none;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.06);
+
+    margin-bottom:25px;
+
+}
+
+.sibling-card .card-header{
+
+    background:linear-gradient(135deg,#0ea5e9,#2563eb);
+
+}
+
+.sibling-card .card-body{
+
+    padding:25px;
+
+}
+
+
+/*==========================================
+          PRIMARY BUTTON
+==========================================*/
+
+.btn-primary{
+
+    background:linear-gradient(135deg,#2563eb,#1d4ed8);
+
+    border:none;
+
+    height:54px;
+
+    padding:0 40px;
+
+    border-radius:14px;
+
+    font-weight:700;
+
+    font-size:15px;
+
+    transition:.3s;
+
+    box-shadow:0 12px 24px rgba(37,99,235,.20);
+
+}
+
+.btn-primary:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:0 20px 40px rgba(37,99,235,.30);
+
+}
+
+
+/*==========================================
+          SUCCESS BUTTON
+==========================================*/
+
+.btn-success{
+
+    background:linear-gradient(135deg,#16a34a,#15803d);
+
+    border:none;
+
+    color:#fff;
+
+    font-weight:700;
+
+    border-radius:14px;
+
+    transition:.3s;
+
+}
+
+.btn-success:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:0 18px 35px rgba(22,163,74,.25);
+
+}
+
+
+/*==========================================
+          DANGER BUTTON
+==========================================*/
+
+.btn-danger{
+
+    background:linear-gradient(135deg,#ef4444,#dc2626);
+
+    border:none;
+
+    border-radius:12px;
+
+    transition:.3s;
+
+}
+
+.btn-danger:hover{
+
+    transform:translateY(-2px);
+
+}
+
+
+/*==========================================
+         REMOVE BUTTON
+==========================================*/
+
+.removeBtn{
+
+    width:100%;
+
+    border-radius:12px;
+
+    font-weight:600;
+
+}
+
+
+/*==========================================
+        ADD LANGUAGE BUTTON
+==========================================*/
+
+#addLanguage{
+
+    padding:12px 30px;
+
+    border-radius:14px;
+
+    font-size:15px;
+
+    font-weight:700;
+
+    transition:.3s;
+
+}
+
+#addLanguage:hover{
+
+    transform:translateY(-2px);
+
+}
+
+
+/*==========================================
+        ADD SIBLING BUTTON
+==========================================*/
+
+#addSibling{
+
+    padding:12px 30px;
+
+    border-radius:14px;
+
+    font-weight:700;
+
+}
+
+
+/*==========================================
+        FILE LINK
+==========================================*/
+
+small a{
+
+    color:#2563eb;
+
+    font-weight:600;
+
+}
+
+small a:hover{
+
+    color:#1d4ed8;
+
+}
+
+
+/*==========================================
+        BADGE STYLE
+==========================================*/
+
+.badge{
+
+    border-radius:30px;
+
+    padding:8px 14px;
+
+    font-size:12px;
+
+    font-weight:600;
+
+}
+
+
+/*==========================================
+        ICON BUTTON
+==========================================*/
+
+.btn i{
+
+    margin-right:6px;
+
+}
+
+
+/*==========================================
+      BUTTON ACTIVE EFFECT
+==========================================*/
+
+.btn:active{
+
+    transform:scale(.97);
+
+}
+
+/*==========================================
+        PREMIUM SAVE SECTION
+==========================================*/
+
+.save-section{
+
+    position:sticky;
+
+    bottom:15px;
+
+    z-index:100;
+
+    background:#ffffff;
+
+    padding:20px 25px;
+
+    border-radius:18px;
+
+    box-shadow:0 -8px 25px rgba(15,23,42,.08);
+
+    margin-top:40px;
+
+}
+
+
+/*==========================================
+        HOVER ANIMATION
+==========================================*/
+
+.form-control,
+.form-select,
+.btn,
+.card,
+.languageRow,
+.sibling-card{
+
+    transition:all .30s ease;
+
+}
+
+
+/*==========================================
+        INPUT ICON SPACE
+==========================================*/
+
+.input-group .form-control{
+
+    border-left:none;
+
+}
+
+.input-group-text{
+
+    background:#f8fafc;
+
+    border:1px solid var(--border);
+
+    border-right:none;
+
+    border-radius:12px 0 0 12px;
+
+}
+
+
+/*==========================================
+        TABLE (Future Use)
+==========================================*/
+
+.table{
+
+    border-radius:15px;
+
+    overflow:hidden;
+
+}
+
+.table thead{
+
+    background:#2563eb;
+
+    color:white;
+
+}
+
+.table th{
+
+    border:none;
+
+}
+
+.table td{
+
+    vertical-align:middle;
+
+}
+
+
+/*==========================================
+        SHADOW UTILITIES
+==========================================*/
+
+.shadow-soft{
+
+    box-shadow:0 10px 25px rgba(15,23,42,.05);
+
+}
+
+.shadow-medium{
+
+    box-shadow:0 18px 40px rgba(15,23,42,.08);
+
+}
+
+.shadow-large{
+
+    box-shadow:0 25px 60px rgba(15,23,42,.12);
+
+}
+
+
+/*==========================================
+        CARD TITLE
+==========================================*/
+
+.card-title{
+
+    font-size:18px;
+
+    font-weight:700;
+
+    color:#0f172a;
+
+}
+
+
+/*==========================================
+        CARD SUBTITLE
+==========================================*/
+
+.card-subtitle{
+
+    color:#64748b;
+
+    font-size:14px;
+
+}
+
+
+/*==========================================
+        CUSTOM ALERT
+==========================================*/
+
+.alert{
+
+    border:none;
+
+    border-radius:15px;
+
+    padding:18px 22px;
+
+}
+
+.alert-success{
+
+    background:#ecfdf5;
+
+    color:#166534;
+
+}
+
+.alert-danger{
+
+    background:#fef2f2;
+
+    color:#991b1b;
+
+}
+
+.alert-warning{
+
+    background:#fffbeb;
+
+    color:#92400e;
+
+}
+
+
+/*==========================================
+        NICE SCROLLBAR
+==========================================*/
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#edf2f7;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:linear-gradient(
+        #3b82f6,
+        #1d4ed8
+    );
+
+    border-radius:30px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:linear-gradient(
+        #2563eb,
+        #1e40af
+    );
+
+}
+
+
+/*==========================================
+        FADE ANIMATION
+==========================================*/
+
+@keyframes fadeUp{
+
+0%{
+
+opacity:0;
+
+transform:translateY(20px);
+
+}
+
+100%{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+.card{
+
+animation:fadeUp .5s ease;
+
+}
+
+
+/*==========================================
+        BUTTON RIPPLE EFFECT
+==========================================*/
+
+.btn{
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.btn::after{
+
+content:"";
+
+position:absolute;
+
+width:0;
+
+height:0;
+
+border-radius:50%;
+
+background:rgba(255,255,255,.35);
+
+top:50%;
+
+left:50%;
+
+transform:translate(-50%,-50%);
+
+transition:.5s;
+
+}
+
+.btn:active::after{
+
+width:300px;
+
+height:300px;
+
+}
+
+
+/*==========================================
+        FOOTER SPACE
+==========================================*/
+
+body{
+
+padding-bottom:60px;
+
+}
+
+
+/*==========================================
+        MOBILE
+==========================================*/
+
+@media(max-width:992px){
+
+.card-header{
+
+padding:25px;
+
+}
+
+.card-body{
+
+padding:25px;
+
+}
+
+h4{
+
+font-size:20px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.container{
+
+padding-left:15px;
+
+padding-right:15px;
+
+}
+
+.card{
+
+border-radius:16px;
+
+}
+
+.card-header{
+
+padding:22px;
+
+}
+
+.card-header h3{
+
+font-size:22px;
+
+line-height:1.5;
+
+}
+
+.card-body{
+
+padding:20px;
+
+}
+
+.form-control,
+.form-select{
+
+height:48px;
+
+font-size:14px;
+
+}
+
+textarea.form-control{
+
+min-height:110px;
+
+}
+
+.btn-primary,
+.btn-success,
+.btn-danger{
+
+width:100%;
+
+margin-top:10px;
+
+}
+
+.save-section{
+
+padding:15px;
+
+bottom:10px;
+
+}
+
+.languageRow{
+
+padding:15px;
+
+}
+
+.sibling-card .card-body{
+
+padding:18px;
+
+}
+
+}
+
+
+/*==========================================
+        DESKTOP SPACING
+==========================================*/
+
+@media(min-width:1200px){
+
+.container{
+
+max-width:1320px;
+
+}
+
+}
+
+.sibling-card .card-header{
+    position: relative;
+}
+
+.sibling-card .card-header h5{
+    position: relative;
+    z-index: 2;
+}
+
+.removeSibling{
+    position: relative;
+    z-index: 9999 !important;
+    pointer-events: auto !important;
+}
+
+.card-header::before,
+.card-header::after{
+    pointer-events: none;
+}
+
+/* =========================================================
+   PRAYAS THEME OVERRIDE
+   Add this at END of personal.css
+========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600&family=Poppins:wght@400;500;600;700&display=swap');
+
+:root{
+    --primary:#EF6B6B;
+    --primary-dark:#E25555;
+    --primary-soft:#FFF3F3;
+
+    --navy:#0F172A;
+    --text:#334155;
+    --text-light:#64748B;
+
+    --bg:#F7F9FC;
+    --card:#FFFFFF;
+    --border:#E2E8F0;
+
+    --shadow:0 12px 35px rgba(15,23,42,.06);
+}
+
+
+/* =========================================================
+   BODY
+========================================================= */
+
+body.bg-light{
+
+    min-height:100vh;
+
+    padding-bottom:60px;
+
+    font-family:
+        "Poppins",
+        "Noto Sans Devanagari",
+        sans-serif !important;
+
+    background:
+        radial-gradient(
+            circle at 5% 0%,
+            rgba(239,107,107,.055),
+            transparent 25%
+        ),
+        #F7F9FC !important;
+
+    color:var(--navy);
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.prayas-header{
+
+    width:100%;
+    height:120px;
+
+    background:#FFFFFF;
+
+    border-top:3px solid var(--primary);
+    border-bottom:1px solid #E8EDF3;
+
+    box-shadow:
+        0 2px 12px rgba(15,23,42,.04);
+
+    position:relative;
+    z-index:100;
+
+}
+
+
+.prayas-header-inner{
+
+    max-width:1320px;
+    height:117px;
+
+    margin:auto;
+    padding:7px 30px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+}
+
+
+/* Logo */
+
+.prayas-brand{
+
+    width:260px;
+    height:105px;
+
+    display:flex;
+    align-items:center;
+
+    overflow:hidden;
+
+}
+
+
+.prayas-logo{
+
+    width:auto !important;
+    max-width:245px !important;
+
+    height:100px !important;
+    max-height:100px !important;
+
+    object-fit:contain !important;
+    object-position:left center !important;
+
+}
+
+
+/* Portal title */
+
+.portal-name{
+
+    margin-left:auto;
+
+    display:flex;
+    flex-direction:column;
+
+    align-items:flex-end;
+
+    text-align:right;
+
+}
+
+
+.portal-name span{
+
+    font-size:15px;
+    font-weight:600;
+
+    color:#1E293B;
+
+}
+
+
+.portal-name small{
+
+    margin-top:4px;
+
+    font-size:10px;
+
+    color:#94A3B8;
+
+}
+
+
+.portal-name::after{
+
+    content:"";
+
+    width:42px;
+    height:3px;
+
+    margin-top:9px;
+
+    border-radius:30px;
+
+    background:var(--primary);
+
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+
+body.bg-light > .container{
+
+    max-width:1180px !important;
+
+    padding-top:35px !important;
+
+    padding-bottom:50px !important;
+
+}
+
+
+/* =========================================================
+   MAIN FORM CARD
+========================================================= */
+
+body.bg-light > .container > .card{
+
+    border:1px solid #E7EBF0 !important;
+
+    border-radius:18px !important;
+
+    overflow:hidden;
+
+    background:#FFFFFF;
+
+    box-shadow:
+        0 1px 2px rgba(15,23,42,.02),
+        0 14px 38px rgba(15,23,42,.055) !important;
+
+    transform:none !important;
+}
+
+
+/* Remove unnecessary hover movement */
+
+body.bg-light > .container > .card:hover{
+
+    transform:none !important;
+
+    box-shadow:
+        0 1px 2px rgba(15,23,42,.02),
+        0 14px 38px rgba(15,23,42,.055) !important;
+
+}
+
+
+/* =========================================================
+   TOP CARD HEADER
+========================================================= */
+
+body.bg-light > .container > .card > .card-header{
+
+    min-height:auto;
+
+    padding:29px 36px 27px !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            #FFF8F8 0%,
+            #FFFFFF 62%,
+            #FFF3F3 100%
+        ) !important;
+
+    border:0 !important;
+
+    color:var(--navy) !important;
+
+}
+
+
+/* Remove old blue circles */
+
+body.bg-light > .container > .card > .card-header::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:4px;
+    height:52px;
+
+    left:0;
+    top:31px;
+
+    border-radius:0 10px 10px 0;
+
+    background:var(--primary);
+
+}
+
+
+body.bg-light > .container > .card > .card-header::after{
+
+    display:none;
+
+}
+
+
+/* Header title */
+
+body.bg-light > .container > .card > .card-header h3{
+
+    margin:0 !important;
+
+    color:#334155 !important;
+
+    font-size:17px;
+
+    line-height:1.55;
+
+    font-weight:600;
+
+    letter-spacing:-.15px;
+
+}
+
+
+body.bg-light > .container > .card > .card-header h3::first-line{
+
+    color:var(--navy);
+
+    font-size:26px;
+
+    line-height:1.35;
+
+    font-weight:700;
+
+    letter-spacing:-.5px;
+
+}
+
+
+/* Description */
+
+body.bg-light > .container > .card > .card-header p{
+
+    max-width:760px;
+
+    margin-top:12px !important;
+
+    color:#64748B !important;
+
+    font-size:12px;
+
+    line-height:1.7;
+
+    font-weight:400;
+
+    opacity:1 !important;
+
+}
+
+
+/* =========================================================
+   PROGRESS
+========================================================= */
+
+.progress{
+
+    height:5px !important;
+
+    background:#F3E5E5 !important;
+
+}
+
+
+.progress-bar,
+.progress-bar.bg-success{
+
+    background:var(--primary) !important;
+
+}
+
+
+/* =========================================================
+   MAIN BODY
+========================================================= */
+
+body.bg-light > .container > .card > .card-body{
+
+    padding:38px 40px 42px !important;
+
+    background:#FFFFFF;
+
+}
+
+
+/* =========================================================
+   SECTION HEADINGS
+========================================================= */
+
+h4{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin:
+        40px
+        0
+        22px !important;
+
+    padding-bottom:11px;
+
+    border-bottom:1px solid #E9EDF2;
+
+    color:#1E293B;
+
+    font-size:18px;
+
+    line-height:1.4;
+
+    font-weight:650;
+
+}
+
+
+/* Coral indicator */
+
+h4::before{
+
+    content:"";
+
+    width:4px;
+    height:21px;
+
+    flex-shrink:0;
+
+    border-radius:10px;
+
+    background:var(--primary);
+
+}
+
+
+/* First section spacing */
+
+form > h4:first-of-type{
+
+    margin-top:20px !important;
+
+}
+
+
+/* =========================================================
+   LABELS
+========================================================= */
+
+label,
+.form-label{
+
+    display:block;
+
+    margin-bottom:6px;
+
+    color:#475569;
+
+    font-size:12px;
+
+    line-height:1.5;
+
+    font-weight:600;
+
+    letter-spacing:0;
+
+}
+
+
+.text-danger{
+
+    color:#DC5C5C !important;
+
+}
+
+
+/* =========================================================
+   FORM SPACING
+========================================================= */
+
+.mb-3{
+
+    margin-bottom:18px !important;
+
+}
+
+
+/* =========================================================
+   INPUTS
+========================================================= */
+
+.form-control,
+.form-select{
+
+    min-height:46px;
+    height:46px;
+
+    padding:
+        9px
+        13px;
+
+    border:
+        1px solid
+        #DDE3EA;
+
+    border-radius:8px;
+
+    background:#FFFFFF;
+
+    color:#1E293B;
+
+    font-family:inherit;
+
+    font-size:13px;
+
+    box-shadow:none;
+
+    transition:
+        border-color .2s ease,
+        box-shadow .2s ease,
+        background .2s ease;
+
+}
+
+
+.form-control:hover,
+.form-select:hover{
+
+    border-color:#E8AAAA;
+
+}
+
+
+.form-control:focus,
+.form-select:focus{
+
+    border-color:var(--primary);
+
+    background:#FFFFFF;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(239,107,107,.10);
+
+    outline:none;
+
+}
+
+
+/* Placeholder */
+
+.form-control::placeholder{
+
+    color:#A0AABA;
+
+    font-size:12px;
+
+}
+
+
+/* Readonly */
+
+.form-control[readonly]{
+
+    background:#F8FAFC;
+
+    color:#64748B;
+
+    font-weight:500;
+
+}
+
+
+/* =========================================================
+   TEXTAREA
+========================================================= */
+
+textarea.form-control{
+
+    height:auto;
+
+    min-height:95px;
+
+    padding-top:12px;
+
+    resize:vertical;
+
+}
+
+
+/* =========================================================
+   FILE INPUT
+========================================================= */
+
+input[type="file"].form-control{
+
+    height:auto;
+
+    min-height:46px;
+
+    padding:8px;
+
+}
+
+
+input[type="file"]::file-selector-button{
+
+    margin-right:12px;
+
+    padding:7px 12px;
+
+    border:0;
+
+    border-radius:6px;
+
+    background:#FFF1F1;
+
+    color:#D95C5C;
+
+    font-family:inherit;
+
+    font-size:11px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+}
+
+
+/* =========================================================
+   CHECKBOX
+========================================================= */
+
+.form-check{
+
+    padding:
+        13px
+        15px
+        13px
+        42px;
+
+    border:
+        1px solid
+        #E5E9EF;
+
+    border-radius:9px;
+
+    background:#FAFBFC;
+
+    box-shadow:none;
+
+}
+
+
+.form-check:hover{
+
+    border-color:#F0C3C3;
+
+    background:#FFFAFA;
+
+    box-shadow:none;
+
+}
+
+
+.form-check-input{
+
+    width:17px;
+
+    height:17px;
+
+    margin-left:-27px;
+
+    border-color:#CBD5E1;
+
+}
+
+
+.form-check-input:checked{
+
+    border-color:var(--primary);
+
+    background-color:var(--primary);
+
+}
+
+
+.form-check-input:focus{
+
+    border-color:var(--primary);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(239,107,107,.12);
+
+}
+
+
+/* =========================================================
+   DIVIDERS
+========================================================= */
+
+hr{
+
+    height:1px;
+
+    margin:34px 0;
+
+    border:0;
+
+    background:#EDF0F4;
+
+    opacity:1;
+
+}
+
+
+/* =========================================================
+   NESTED FAMILY CARDS
+========================================================= */
+
+.card.shadow-sm{
+
+    margin-bottom:22px;
+
+    border:
+        1px solid
+        #E7EBF0 !important;
+
+    border-radius:12px;
+
+    overflow:hidden;
+
+    background:#FFFFFF;
+
+    box-shadow:
+        0 5px 18px
+        rgba(15,23,42,.035) !important;
+
+    transform:none !important;
+
+}
+
+
+.card.shadow-sm:hover{
+
+    transform:none !important;
+
+    border-color:#F0CCCC !important;
+
+    box-shadow:
+        0 7px 22px
+        rgba(15,23,42,.05) !important;
+
+}
+
+
+/* Nested card headers */
+
+.card.shadow-sm .card-header,
+.card.shadow-sm .card-header.bg-primary,
+.card.shadow-sm .card-header.bg-success{
+
+    padding:
+        14px
+        19px !important;
+
+    border:0;
+
+    border-bottom:
+        1px solid
+        #F1DEDE !important;
+
+    background:
+        #FFF7F7 !important;
+
+    color:#1E293B !important;
+
+}
+
+
+.card.shadow-sm .card-header::before,
+.card.shadow-sm .card-header::after{
+
+    display:none;
+
+}
+
+
+.card.shadow-sm .card-header h5{
+
+    margin:0;
+
+    color:#334155 !important;
+
+    font-size:14px;
+
+    line-height:1.4;
+
+    font-weight:650;
+
+}
+
+
+.card.shadow-sm .card-body{
+
+    padding:
+        22px
+        20px !important;
+
+}
+
+
+/* =========================================================
+   LANGUAGE ROW
+========================================================= */
+
+.languageRow{
+
+    margin-bottom:14px;
+
+    padding:17px;
+
+    border:
+        1px solid
+        #E5E9EF;
+
+    border-radius:10px;
+
+    background:#FCFDFE;
+
+    box-shadow:none;
+
+}
+
+
+.languageRow:hover{
+
+    border-color:#EFC3C3;
+
+    background:#FFFBFB;
+
+    transform:none;
+
+    box-shadow:
+        0 5px 15px
+        rgba(15,23,42,.035);
+
+}
+
+
+/* =========================================================
+   SIBLING CARD
+========================================================= */
+
+.sibling-card{
+
+    margin-bottom:20px;
+
+    border:
+        1px solid
+        #E7EBF0 !important;
+
+    border-radius:12px;
+
+    overflow:hidden;
+
+    box-shadow:
+        0 5px 18px
+        rgba(15,23,42,.04);
+
+}
+
+
+.sibling-card .card-header,
+.sibling-card .card-header.bg-info{
+
+    position:relative;
+
+    padding:
+        13px
+        18px !important;
+
+    border-bottom:
+        1px solid
+        #F1DEDE;
+
+    background:
+        #FFF7F7 !important;
+
+    color:#334155 !important;
+
+}
+
+
+.sibling-card .card-header::before,
+.sibling-card .card-header::after{
+
+    display:none;
+
+}
+
+
+.sibling-card .card-header strong{
+
+    color:#334155;
+
+    font-size:13px;
+
+    font-weight:650;
+
+}
+
+
+.sibling-card .card-body{
+
+    padding:20px !important;
+
+}
+
+
+/* Keep Remove button clickable */
+
+.removeSibling{
+
+    position:relative;
+
+    z-index:10 !important;
+
+    pointer-events:auto !important;
+
+}
+
+
+/* =========================================================
+   BUTTONS COMMON
+========================================================= */
+
+.btn{
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:8px;
+
+    font-family:inherit;
+
+    font-size:12px;
+
+    font-weight:600;
+
+    box-shadow:none;
+
+    transition:
+        background .2s ease,
+        border-color .2s ease,
+        color .2s ease,
+        transform .2s ease;
+
+}
+
+
+/* Remove old huge ripple */
+
+.btn::after{
+
+    display:none !important;
+
+}
+
+
+/* =========================================================
+   PRIMARY / SAVE BUTTON
+========================================================= */
+
+.btn-primary,
+.btn-primary.btn-lg{
+
+    min-height:48px;
+
+    padding:
+        10px
+        28px;
+
+    border:
+        1px solid
+        var(--primary) !important;
+
+    border-radius:8px !important;
+
+    background:
+        var(--primary) !important;
+
+    color:#FFFFFF;
+
+    font-size:13px;
+
+    font-weight:600;
+
+    box-shadow:
+        0 5px 14px
+        rgba(239,107,107,.18);
+
+}
+
+
+.btn-primary:hover{
+
+    border-color:
+        var(--primary-dark) !important;
+
+    background:
+        var(--primary-dark) !important;
+
+    transform:translateY(-1px);
+
+    box-shadow:
+        0 7px 17px
+        rgba(239,107,107,.22);
+
+}
+
+
+/* =========================================================
+   ADD BUTTONS
+========================================================= */
+
+.btn-success,
+#addLanguage,
+#addSibling{
+
+    min-height:42px;
+
+    padding:
+        9px
+        18px;
+
+    border:
+        1px solid
+        #E9A7A7 !important;
+
+    border-radius:8px !important;
+
+    background:
+        #FFF7F7 !important;
+
+    color:
+        #D95757 !important;
+
+    font-size:12px;
+
+    font-weight:600;
+
+    box-shadow:none;
+
+}
+
+
+.btn-success:hover,
+#addLanguage:hover,
+#addSibling:hover{
+
+    border-color:
+        var(--primary) !important;
+
+    background:
+        var(--primary) !important;
+
+    color:#FFFFFF !important;
+
+    transform:translateY(-1px);
+
+}
+
+
+/* =========================================================
+   DANGER / REMOVE
+========================================================= */
+
+.btn-danger,
+.removeBtn,
+.removeSibling{
+
+    padding:
+        7px
+        12px;
+
+    border:
+        1px solid
+        #F0C5C5 !important;
+
+    border-radius:7px !important;
+
+    background:
+        #FFF5F5 !important;
+
+    color:
+        #C94B4B !important;
+
+    font-size:11px;
+
+    box-shadow:none;
+
+}
+
+
+.btn-danger:hover,
+.removeBtn:hover,
+.removeSibling:hover{
+
+    border-color:#DC6666 !important;
+
+    background:#DC6666 !important;
+
+    color:#FFFFFF !important;
+
+    transform:none;
+
+}
+
+
+/* =========================================================
+   LINKS
+========================================================= */
+
+a,
+small a{
+
+    color:#D95C5C;
+
+    font-weight:500;
+
+    text-decoration:none;
+
+}
+
+
+a:hover,
+small a:hover{
+
+    color:var(--primary-dark);
+
+    text-decoration:underline;
+
+}
+
+
+/* =========================================================
+   ALERTS
+========================================================= */
+
+.alert{
+
+    padding:14px 17px;
+
+    border-radius:9px;
+
+    font-size:12px;
+
+}
+
+
+.alert-success{
+
+    background:#F1FAF5;
+
+    color:#247552;
+
+}
+
+
+.alert-danger{
+
+    background:#FFF3F3;
+
+    color:#B74A4A;
+
+}
+
+
+.alert-warning{
+
+    background:#FFF9ED;
+
+    color:#8A681D;
+
+}
+
+
+/* =========================================================
+   VALIDATION
+========================================================= */
+
+.is-invalid{
+
+    border-color:#D95C5C !important;
+
+}
+
+
+.is-invalid:focus{
+
+    box-shadow:
+        0 0 0 3px
+        rgba(217,92,92,.10);
+
+}
+
+
+.is-valid{
+
+    border-color:#5AA77A !important;
+
+}
+
+
+.is-valid:focus{
+
+    box-shadow:
+        0 0 0 3px
+        rgba(90,167,122,.10);
+
+}
+
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+::-webkit-scrollbar{
+
+    width:9px;
+
+}
+
+
+::-webkit-scrollbar-track{
+
+    background:#F1F3F6;
+
+}
+
+
+::-webkit-scrollbar-thumb{
+
+    border-radius:30px;
+
+    background:#D6A0A0;
+
+}
+
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:var(--primary);
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:768px){
+
+    .prayas-header{
+
+        height:100px;
+
+    }
+
+
+    .prayas-header-inner{
+
+        height:97px;
+
+        padding:5px 18px;
+
+    }
+
+
+    .prayas-brand{
+
+        width:205px;
+
+        height:88px;
+
+    }
+
+
+    .prayas-logo{
+
+        max-width:200px !important;
+
+        height:84px !important;
+
+    }
+
+
+    .portal-name span{
+
+        font-size:11px;
+
+    }
+
+
+    .portal-name small{
+
+        font-size:8px;
+
+    }
+
+
+    body.bg-light > .container{
+
+        padding:
+            20px
+            12px
+            35px !important;
+
+    }
+
+
+    body.bg-light > .container > .card{
+
+        border-radius:13px !important;
+
+    }
+
+
+    body.bg-light > .container > .card > .card-header{
+
+        padding:
+            24px
+            20px !important;
+
+    }
+
+
+    body.bg-light > .container > .card > .card-header h3{
+
+        font-size:14px;
+
+    }
+
+
+    body.bg-light > .container > .card > .card-header h3::first-line{
+
+        font-size:21px;
+
+    }
+
+
+    body.bg-light > .container > .card > .card-body{
+
+        padding:
+            25px
+            18px
+            30px !important;
+
+    }
+
+
+    h4{
+
+        margin-top:32px !important;
+
+        font-size:16px;
+
+    }
+
+
+    .form-control,
+    .form-select{
+
+        min-height:44px;
+
+        height:44px;
+
+        font-size:12px;
+
+    }
+
+
+    .card.shadow-sm .card-body,
+    .sibling-card .card-body{
+
+        padding:17px !important;
+
+    }
+
+
+    .btn-primary,
+    .btn-primary.btn-lg{
+
+        width:100%;
+
+        margin-top:10px;
+
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media(max-width:576px){
+
+    .prayas-header{
+
+        height:90px;
+
+    }
+
+
+    .prayas-header-inner{
+
+        height:87px;
+
+        justify-content:center;
+
+    }
+
+
+    .prayas-brand{
+
+        width:auto;
+
+        height:80px;
+
+        justify-content:center;
+
+    }
+
+
+    .prayas-logo{
+
+        max-width:195px !important;
+
+        height:76px !important;
+
+        object-position:center !important;
+
+    }
+
+
+    .portal-name{
+
+        display:none;
+
+    }
+
+}

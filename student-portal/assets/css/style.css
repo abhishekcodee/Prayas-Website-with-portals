@@ -1,0 +1,726 @@
+/* =========================================================
+   PRAYAS STUDENT RECRUITMENT PORTAL — AUTH STYLESHEET
+   Architectural Split-Screen in PRAYAS Light Website Theme
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Manrope:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --bg-main: #F8FAFC;
+  --coral-primary: #FF5252;
+  --coral-gradient: linear-gradient(135deg, #FF5252 0%, #FF1744 100%);
+  --coral-hover: #E11D48;
+  --coral-soft: rgba(255, 82, 82, 0.08);
+  --coral-glow: rgba(255, 82, 82, 0.35);
+
+  --navy: #0F172A;
+  --ink-heading: #0F172A;
+  --ink-body: #334155;
+  --ink-muted: #64748B;
+  --ink-light: #94A3B8;
+
+  --border-line: #E2E8F0;
+  --card-bg: #FFFFFF;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Manrope', 'Poppins', -apple-system, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--bg-main) !important;
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(255, 82, 82, 0.12) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(37, 99, 235, 0.10) 0px, transparent 50%),
+    radial-gradient(at 50% 100%, rgba(124, 58, 237, 0.08) 0px, transparent 50%) !important;
+  background-attachment: fixed !important;
+  color: var(--ink-body) !important;
+  display: flex;
+  flex-direction: column;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+/* =========================================================
+   LIGHT GLASS NAVBAR (MATCHES MAIN WEBSITE NAVBAR)
+   ========================================================= */
+.prayas-header {
+  width: 100% !important;
+  height: 80px !important;
+  position: sticky !important;
+  top: 0 !important;
+  background: rgba(255, 255, 255, 0.88) !important;
+  backdrop-filter: blur(20px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+  border-bottom: 1px solid var(--border-line) !important;
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05) !important;
+  z-index: 999 !important;
+}
+
+.prayas-header-inner {
+  width: 100% !important;
+  max-width: 1240px !important;
+  height: 100% !important;
+  margin: 0 auto !important;
+  padding: 0 24px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 20px !important;
+}
+
+.prayas-brand {
+  display: flex !important;
+  align-items: center !important;
+  text-decoration: none !important;
+}
+
+.prayas-brand img,
+.prayas-logo {
+  height: 58px !important;
+  max-height: 58px !important;
+  width: auto !important;
+  display: block !important;
+  object-fit: contain !important;
+}
+
+/* Shared Navigation Links for Portal Header */
+.prayas-header .nav__links {
+  display: flex !important;
+  align-items: center !important;
+  gap: clamp(12px, 1.8vw, 24px) !important;
+  margin-left: 16px !important;
+  margin-right: auto !important;
+  white-space: nowrap !important;
+}
+
+.prayas-header .nav__links a {
+  position: relative !important;
+  text-decoration: none !important;
+  color: var(--navy, #0F172A) !important;
+  font-family: 'Plus Jakarta Sans', 'Inter', sans-serif !important;
+  font-size: clamp(0.85rem, 1vw, 0.95rem) !important;
+  font-weight: 600 !important;
+  padding: 6px 8px !important;
+  transition: color 0.2s ease !important;
+  white-space: nowrap !important;
+}
+
+.prayas-header .nav__links a::after {
+  content: "" !important;
+  position: absolute !important;
+  left: 0 !important;
+  bottom: -2px !important;
+  width: 0 !important;
+  height: 2.5px !important;
+  background: var(--coral-gradient, linear-gradient(135deg, #EF6B6B 0%, #E05555 100%)) !important;
+  border-radius: 2px !important;
+  transition: width 0.25s ease !important;
+}
+
+.prayas-header .nav__links a:hover,
+.prayas-header .nav__links a.is-active {
+  color: var(--coral-primary, #EF6B6B) !important;
+}
+
+.prayas-header .nav__links a:hover::after,
+.prayas-header .nav__links a.is-active::after {
+  width: 100% !important;
+}
+
+@media (max-width: 991px) {
+  .prayas-header .nav__links {
+    display: none !important;
+  }
+}
+
+.portal-name {
+  margin-left: auto !important;
+  margin-right: 16px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-end !important;
+  text-align: right !important;
+}
+
+.portal-name > span {
+  font-family: 'Archivo', 'Manrope', sans-serif !important;
+  font-size: 0.95rem !important;
+  font-weight: 700 !important;
+  color: var(--navy) !important;
+}
+
+.portal-name > small {
+  font-size: 0.78rem !important;
+  font-weight: 600 !important;
+  color: var(--coral-primary) !important;
+}
+
+.portal-name::after {
+  display: none !important;
+}
+
+/* Back to Website Coral Pill CTA Button */
+a.btn-back-website,
+.btn-back-website {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  padding: 10px 22px !important;
+  border-radius: 50px !important;
+  background: var(--coral-gradient) !important;
+  color: #FFFFFF !important;
+  text-decoration: none !important;
+  font-size: 0.85rem !important;
+  font-weight: 700 !important;
+  box-shadow: 0 6px 20px -2px var(--coral-glow) !important;
+  transition: all 0.25s var(--ease) !important;
+  white-space: nowrap !important;
+  border: none !important;
+}
+
+a.btn-back-website:hover,
+.btn-back-website:hover {
+  color: #FFFFFF !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 10px 26px -2px var(--coral-glow) !important;
+}
+
+/* =========================================================
+   MAIN WRAPPER & SPLIT CARD ARCHITECTURE (LIGHT THEME)
+   ========================================================= */
+.portal-main-wrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.portal-split-card {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  min-height: 580px;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  border-radius: 24px;
+  background: #FFFFFF;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  box-shadow: 0 22px 45px -10px rgba(15, 23, 42, 0.12), 0 8px 18px -4px rgba(15, 23, 42, 0.04), 0 0 30px rgba(255, 82, 82, 0.06);
+  overflow: hidden;
+}
+
+/* Left Visual Architectural Panel */
+.split-visual-panel {
+  position: relative;
+  background: url('../images/academy-bg.png') center/cover no-repeat;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 32px;
+  overflow: hidden;
+}
+
+.split-visual-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.25) 0%, rgba(15, 23, 42, 0.75) 100%);
+  z-index: 1;
+}
+
+.split-divider-line {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, #FF5252 0%, #FF8A65 100%);
+  box-shadow: 0 0 10px rgba(255, 82, 82, 0.4);
+  z-index: 3;
+}
+
+/* Glassmorphic PRAYAS Logo Showcase Overlay Card */
+.portal-brand-overlay-card {
+  position: relative;
+  z-index: 2;
+  background: rgba(15, 23, 42, 0.72);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 20px;
+  padding: 26px 24px;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
+  text-align: left;
+  animation: portalFadeUp 0.8s ease forwards;
+}
+
+.portal-logo-glow-box {
+  background: #FFFFFF;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 18px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(255, 82, 82, 0.25);
+  margin-bottom: 16px;
+}
+
+.portal-overlay-logo {
+  height: 38px;
+  width: auto;
+  object-fit: contain;
+}
+
+.portal-tag-badge {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: #FF5252;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.portal-brand-overlay-card h3 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+
+.portal-brand-overlay-card p {
+  font-size: 0.85rem;
+  color: #94A3B8;
+  line-height: 1.5;
+  margin: 0;
+}
+
+@keyframes portalFadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Right Form Panel (Clean Light Website Theme) */
+.split-form-panel {
+  position: relative;
+  background: #FFFFFF;
+  padding: 48px 42px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.split-form-panel h2 {
+  font-family: 'Archivo', 'Manrope', sans-serif !important;
+  font-size: 2.1rem !important;
+  font-weight: 800 !important;
+  color: var(--navy) !important;
+  margin-bottom: 24px !important;
+  letter-spacing: -0.02em;
+}
+
+/* Form Field Labels & Inputs */
+.input-label {
+  display: block;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--ink-body);
+  margin-bottom: 8px;
+}
+
+.form-group-icon {
+  position: relative;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.form-group-icon .input-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--ink-light);
+  font-size: 0.95rem;
+  pointer-events: none;
+  z-index: 2;
+  transition: color 0.2s ease;
+}
+
+.form-group-icon:focus-within .input-icon {
+  color: var(--coral-primary);
+}
+
+.split-form-panel input {
+  display: block !important;
+  width: 100% !important;
+  height: 52px !important;
+  margin: 0 !important;
+  padding: 0 16px 0 46px !important;
+  border: 1.5px solid var(--border-line) !important;
+  border-radius: 12px !important;
+  outline: none !important;
+  background: #FFFFFF !important;
+  color: var(--navy) !important;
+  font-size: 0.92rem !important;
+  font-weight: 500 !important;
+  transition: all 0.2s ease !important;
+}
+
+.split-form-panel input:focus {
+  border-color: var(--coral-primary) !important;
+  box-shadow: 0 0 0 4px rgba(255, 82, 82, 0.14) !important;
+}
+
+.split-form-panel input::placeholder {
+  color: #A0AEC0 !important;
+  font-weight: 400 !important;
+}
+
+/* Password Box & Toggle */
+.password-box {
+  position: relative;
+}
+
+.password-box input {
+  padding-right: 48px !important;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: var(--ink-light);
+  font-size: 1.05rem;
+  padding: 4px;
+  z-index: 3;
+  transition: color 0.2s ease;
+}
+
+.toggle-password:hover {
+  color: var(--coral-primary);
+}
+
+/* Forgot Password Link */
+.forgot-password-link {
+  display: block;
+  text-align: right;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--coral-primary);
+  margin-top: -12px;
+  margin-bottom: 20px;
+  transition: color 0.2s ease;
+}
+
+.forgot-password-link:hover {
+  color: var(--coral-hover);
+  text-decoration: underline !important;
+}
+
+/* Auth Divider */
+.auth-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 22px 0 20px;
+  position: relative;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--border-line);
+}
+
+.auth-divider span {
+  padding: 0 14px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--ink-muted);
+}
+
+/* Google Sign-in Button */
+.btn-google-auth {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 22px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
+  transition: all 0.2s ease;
+}
+
+.btn-google-auth:hover {
+  transform: translateY(-2px);
+  border-color: #CBD5E1;
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.1);
+}
+
+/* Register Footer Link */
+.split-form-footer {
+  text-align: center;
+  font-size: 0.86rem;
+  color: var(--ink-muted);
+  margin-bottom: 24px;
+}
+
+.split-form-footer a {
+  color: var(--coral-primary);
+  font-weight: 700;
+  text-decoration: underline !important;
+  margin-left: 4px;
+}
+
+.split-form-footer a:hover {
+  color: var(--coral-hover);
+}
+
+/* Action Button */
+.btn-portal-primary {
+  width: 100% !important;
+  height: 52px !important;
+  border: none !important;
+  border-radius: 12px !important;
+  background: var(--coral-gradient) !important;
+  color: #FFFFFF !important;
+  font-size: 1rem !important;
+  font-weight: 800 !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  box-shadow: 0 8px 24px -2px var(--coral-glow) !important;
+  transition: all 0.25s var(--ease) !important;
+}
+
+.btn-portal-primary:hover {
+  color: #FFFFFF !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 12px 28px -2px var(--coral-glow) !important;
+}
+
+/* Fallback Container for OTP / Password Pages */
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  margin: 20px auto;
+  padding: 40px 36px 36px;
+  background: #FFFFFF !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border: 1px solid rgba(226, 232, 240, 0.9) !important;
+  border-radius: 24px !important;
+  box-shadow: 0 22px 45px -10px rgba(15, 23, 42, 0.12), 0 8px 18px -4px rgba(15, 23, 42, 0.04), 0 0 30px rgba(255, 82, 82, 0.06) !important;
+  overflow: hidden;
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 4px;
+  background: var(--coral-gradient);
+}
+
+.card-icon-badge {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: var(--coral-soft);
+  color: var(--coral-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  margin-bottom: 18px;
+  border: 1px solid rgba(255, 82, 82, 0.25);
+}
+
+.container h2 {
+  font-family: 'Archivo', 'Manrope', sans-serif !important;
+  margin: 0 0 6px;
+  text-align: left;
+  color: var(--navy);
+  font-size: 1.7rem;
+  line-height: 1.2;
+  font-weight: 800;
+}
+
+.card-subtitle {
+  font-size: 0.88rem;
+  color: var(--ink-muted);
+  margin-bottom: 26px;
+}
+
+.container input {
+  display: block !important;
+  width: 100% !important;
+  height: 50px !important;
+  margin: 0 !important;
+  padding: 0 16px 0 46px !important;
+  border: 1.5px solid var(--border-line) !important;
+  border-radius: 12px !important;
+  outline: none !important;
+  background: #FFFFFF !important;
+  color: var(--navy) !important;
+  font-size: 0.92rem !important;
+  font-weight: 500 !important;
+}
+
+/* Alert Messages */
+.alert-message {
+  margin-bottom: 20px;
+  padding: 12px 16px;
+  background: #FEF2F2;
+  border: 1px solid #FCA5A5;
+  border-radius: 10px;
+  color: #991B1B;
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .portal-split-card {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    min-height: auto;
+  }
+  .split-visual-panel {
+    display: none;
+  }
+}
+
+/* Google Account Modal Overlay */
+.google-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.25s var(--ease);
+  padding: 20px;
+}
+
+.google-modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.google-modal-card {
+  width: 100%;
+  max-width: 420px;
+  background: #FFFFFF;
+  border-radius: 20px;
+  padding: 32px 28px 28px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  position: relative;
+  transform: translateY(20px) scale(0.95);
+  transition: all 0.3s var(--ease);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+}
+
+.google-modal-overlay.active .google-modal-card {
+  transform: translateY(0) scale(1);
+}
+
+.google-modal-close {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  color: #94A3B8;
+  cursor: pointer;
+  padding: 4px;
+  transition: color 0.2s ease;
+}
+
+.google-modal-close:hover {
+  color: #FF5252;
+}
+
+.google-badge-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.google-modal-card h3 {
+  font-family: 'Archivo', 'Manrope', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #0F172A;
+  margin-bottom: 6px;
+}
+
+.google-modal-card p {
+  font-size: 0.85rem;
+  color: #64748B;
+  margin-bottom: 22px;
+}
+
+.btn-google-submit {
+  width: 100%;
+  height: 48px;
+  border-radius: 12px;
+  background: #4285F4;
+  color: #FFFFFF;
+  border: none;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 0 6px 20px rgba(66, 133, 244, 0.35);
+  transition: all 0.2s ease;
+}
+
+.btn-google-submit:hover {
+  background: #3367D6;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(66, 133, 244, 0.45);
+}

@@ -1,0 +1,61 @@
+/* Resume Preview Stylesheet for PRAYAS Student Portal */
+
+:root {
+  --navy-dark: #0F172A;
+  --coral-accent: #E11D48;
+  --border-color: #E2E8F0;
+  --bg-slate: #F8FAFC;
+}
+
+body {
+  background-color: #F1F5F9;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: #1E293B;
+  padding: 40px 15px;
+}
+
+.resume {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 45px 50px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+  border: 1px solid var(--border-color);
+}
+
+.resume h1 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--navy-dark);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.resume h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--coral-accent);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 24px;
+  margin-bottom: 12px;
+  border-bottom: 2px solid #FFE4E6;
+  padding-bottom: 4px;
+}
+
+.resume hr {
+  margin: 20px 0;
+  border-color: var(--border-color);
+}
+
+.resume ul {
+  padding-left: 20px;
+}
+
+.resume ul li {
+  margin-bottom: 6px;
+  color: #334155;
+  font-size: 0.95rem;
+}

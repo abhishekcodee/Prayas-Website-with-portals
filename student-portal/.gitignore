@@ -1,0 +1,19 @@
+# Sensitive configuration
+.env
+
+# Private configuration
+config.php
+db.php
+
+# User uploaded/private files
+uploads/
+assets/uploads/
+video/
+
+# Composer dependencies
+vendor/
+
+# Editor / OS files
+.vscode/
+Thumbs.db
+.DS_Store
