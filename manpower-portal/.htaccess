@@ -1,0 +1,45 @@
+# ==============================================================================
+# PRAYAS — The Automation Academy Manpower Portal
+# Apache Web Server Hardening & Security Configuration
+# ==============================================================================
+
+# Disable directory browsing
+Options -Indexes
+
+# Follow symlinks
+Options +FollowSymLinks
+
+# Prevent direct access to sensitive configuration, database, tests and doc files
+<FilesMatch "^\.|\.(env|sql|log|ini|json|lock|md|sh|bak)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Block access to internal system folders directly via HTTP
+RedirectMatch 403 ^/(config|database|docs|tests)/
+
+# Set Default Charset
+AddDefaultCharset UTF-8
+
+# Security HTTP Response Headers
+<IfModule mod_headers.c>
+    # Prevent Clickjacking
+    Header always set X-Frame-Options "SAMEORIGIN"
+
+    # Prevent MIME Sniffing
+    Header always set X-Content-Type-Options "nosniff"
+
+    # Cross-Site Scripting Filter
+    Header always set X-XSS-Protection "1; mode=block"
+
+    # Referrer Policy
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+    # Permissions Policy
+    Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+</IfModule>
+
+# Custom Error Pages
+ErrorDocument 403 /views/auth/login.php
+ErrorDocument 404 /views/auth/login.php
+

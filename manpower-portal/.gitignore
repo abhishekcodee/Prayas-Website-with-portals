@@ -1,0 +1,31 @@
+# Environment & Local Configuration
+.env
+.env.local
+.env.*.local
+
+# Logs & Temporary Files
+*.log
+*.tmp
+*.bak
+/scratch/
+/tests/scratch*
+
+# OS & Editor Files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.suo
+*.user
+
+# Vendor & Packages (if any)
+vendor/
+node_modules/
+
+# User Uploads (keep directory structure)
+/uploads/*
+!/uploads/.gitkeep
+!/uploads/logos/
+/uploads/logos/*
+!/uploads/logos/.gitkeep
+

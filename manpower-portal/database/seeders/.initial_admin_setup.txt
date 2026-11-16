@@ -1,0 +1,7 @@
+PRAYAS Industry Manpower Requirement Portal - Initial Super Admin Setup
+========================================================================
+Generated At: 2026-11-05 06:23:44
+Email:        admin@prayas-academy.internal
+Temp Password:2bf264d4f1a78cec!P#
+Notice:       Super Admin is forced to change this password on initial login.
+              Delete this file immediately after initial setup.
