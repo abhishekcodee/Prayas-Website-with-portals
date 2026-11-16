@@ -30,6 +30,7 @@ if ($reqId <= 0) {
 
 $industryCtrl = new IndustryController();
 $req = $industryCtrl->getRequirementDetails($companyId, $reqId);
+$company = $industryCtrl->getCompanyProfile($companyId);
 
 if (!$req) {
     $_SESSION['flash_error'] = 'Requirement not found or access denied.';
@@ -264,6 +265,24 @@ $statusBadge = match ($req['status']) {
 
             <!-- Right Column: Plant Location, Governance & Timeline -->
             <div class="col-lg-4">
+                <!-- Company Profile / Website Link Card -->
+                <?php 
+                $compWebsite = !empty($req['company_website']) ? $req['company_website'] : ($company['website'] ?? null);
+                if (!empty($compWebsite)): 
+                ?>
+                <div class="card border-0 shadow-sm mb-4">
+                    <div class="card-header bg-transparent py-3">
+                        <h6 class="fw-bold mb-0"><i class="bi bi-globe me-2 text-primary"></i>Company Profile</h6>
+                    </div>
+                    <div class="card-body">
+                        <p class="small text-muted mb-2">Official corporate profile and website for this hiring requisition:</p>
+                        <a href="<?= htmlspecialchars(str_starts_with($compWebsite, 'http') ? $compWebsite : 'https://' . $compWebsite) ?>" target="_blank" class="btn btn-outline-primary btn-sm w-100">
+                            <i class="bi bi-box-arrow-up-right me-1"></i>Visit Company Profile Link
+                        </a>
+                    </div>
+                </div>
+                <?php endif; ?>
+
                 <!-- Plant Facility Card -->
                 <div class="card border-0 shadow-sm mb-4">
                     <div class="card-header bg-transparent py-3">

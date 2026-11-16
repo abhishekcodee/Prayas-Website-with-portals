@@ -140,6 +140,14 @@ require_once __DIR__ . '/../../includes/sidebar.php';
                                 <span class="text-muted">Audited By:</span>
                                 <span class="fw-semibold"><?= htmlspecialchars($company['verified_by_name'] ?? 'PRAYAS Committee') ?></span>
                             </li>
+                            <?php if (!empty($company['website'])): ?>
+                            <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                                <span class="text-muted"><i class="bi bi-globe me-1"></i>Profile Link:</span>
+                                <a href="<?= htmlspecialchars($company['website']) ?>" target="_blank" class="fw-semibold text-truncate ms-2" style="max-width: 180px;">
+                                    <?= htmlspecialchars(parse_url($company['website'], PHP_URL_HOST) ?: $company['website']) ?> <i class="bi bi-box-arrow-up-right small"></i>
+                                </a>
+                            </li>
+                            <?php endif; ?>
                             <?php if (!empty($company['sensitive_modified_at'])): ?>
                             <li class="list-group-item d-flex justify-content-between px-0 bg-warning-subtle p-2 rounded">
                                 <span class="text-warning-emphasis"><i class="bi bi-exclamation-triangle me-1"></i>Re-verification Flag:</span>
@@ -221,8 +229,17 @@ require_once __DIR__ . '/../../includes/sidebar.php';
                                     </select>
                                 </div>
                                 <div class="col-md-6">
-                                    <label class="form-label small fw-semibold">Company Official Website</label>
-                                    <input type="text" name="website" class="form-control" placeholder="https://example.com" value="<?= htmlspecialchars($company['website'] ?? '') ?>">
+                                    <label class="form-label small fw-semibold">Company Profile / Official Website Link</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-light text-muted"><i class="bi bi-globe"></i></span>
+                                        <input type="url" name="website" class="form-control" placeholder="https://www.company.com or profile link" value="<?= htmlspecialchars($company['website'] ?? '') ?>">
+                                        <?php if (!empty($company['website'])): ?>
+                                            <a href="<?= htmlspecialchars($company['website']) ?>" target="_blank" class="btn btn-outline-primary" title="Visit Company Profile Link">
+                                                <i class="bi bi-box-arrow-up-right me-1"></i>Visit Link
+                                            </a>
+                                        <?php endif; ?>
+                                    </div>
+                                    <div class="form-text small">Public company profile, corporate website, or official landing page.</div>
                                 </div>
                             </div>
 

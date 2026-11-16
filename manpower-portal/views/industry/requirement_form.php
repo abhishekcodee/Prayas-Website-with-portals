@@ -86,6 +86,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'department'                     => trim((string)($_POST['department'] ?? '')),
         'industry_sector'                => trim((string)($_POST['industry_sector'] ?? ($company['industry_type'] ?? ''))),
         'requirement_purpose'            => trim((string)($_POST['requirement_purpose'] ?? '')),
+        'company_website'                => trim((string)($_POST['company_website'] ?? ($company['website'] ?? ''))),
         'job_description'                => trim((string)($_POST['job_description'] ?? '')),
         'employment_type'                => (string)($_POST['employment_type'] ?? 'Full Time'),
         'priority'                       => (string)($_POST['priority'] ?? 'Medium'),
@@ -251,20 +252,33 @@ require_once __DIR__ . '/../../includes/sidebar.php';
                         </h5>
 
                         <div class="row g-3">
-                            <div class="col-md-8">
+                            <div class="col-md-6">
                                 <label class="form-label small fw-semibold">Requirement Title / Role Designation <span class="text-danger">*</span></label>
                                 <input type="text" name="title" id="f_title" class="form-control" placeholder="e.g., CNC Machine Operator & Tool Room Technician" value="<?= htmlspecialchars($fData['title'] ?? '') ?>" required>
                                 <div class="form-text small">Minimum 5 characters. Must reflect shop floor job profile.</div>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-6">
                                 <label class="form-label small fw-semibold">Associated Company</label>
                                 <input type="text" class="form-control bg-light" value="<?= htmlspecialchars($company['company_name'] ?? '') ?>" readonly>
                                 <div class="form-text small">Strictly bound to authenticated enterprise.</div>
                             </div>
 
+                            <div class="col-md-6">
+                                <label class="form-label small fw-semibold">Company Profile / Website Link</label>
+                                <div class="input-group">
+                                    <span class="input-group-text bg-light text-muted"><i class="bi bi-globe"></i></span>
+                                    <input type="url" name="company_website" id="f_company_website" class="form-control" placeholder="https://www.company.com or public company profile" value="<?= htmlspecialchars($fData['company_website'] ?? ($company['website'] ?? '')) ?>">
+                                    <?php $webPreview = $fData['company_website'] ?? ($company['website'] ?? ''); ?>
+                                    <?php if (!empty($webPreview)): ?>
+                                        <a href="<?= htmlspecialchars($webPreview) ?>" target="_blank" class="btn btn-outline-secondary" title="Preview company website / profile" id="previewWebsiteBtn">
+                                            <i class="bi bi-box-arrow-up-right"></i>
+                                        </a>
+                                    <?php endif; ?>
+                                </div>
+                                <div class="form-text small">Official company website or public digital profile link accessible to candidates.</div>
+                            </div>
 
-
-                            <div class="col-md-4">
+                            <div class="col-md-6">
                                 <label class="form-label small fw-semibold">Industry Sector <span class="text-danger">*</span></label>
                                 <input type="text" name="industry_sector" class="form-control" value="<?= htmlspecialchars($fData['industry_sector'] ?? ($company['industry_type'] ?? 'Automotive & Industrial Automation')) ?>" required>
                             </div>
@@ -1082,6 +1096,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const maxSal = document.getElementById('f_max_salary').value;
         const deadline = document.getElementById('f_application_deadline').value;
         const joining = document.getElementById('f_target_joining_date').value;
+        const companyWebsite = document.getElementById('f_company_website') ? document.getElementById('f_company_website').value.trim() : '';
 
         let tradesHtml = '';
         document.querySelectorAll('.trade-item').forEach((item, idx) => {
@@ -1090,6 +1105,10 @@ document.addEventListener('DOMContentLoaded', function () {
             tradesHtml += `<span class="badge bg-primary-subtle text-primary border border-primary me-2 mb-1">${trName}: ${vac} Vacancies</span>`;
         });
 
+        const websiteHtml = companyWebsite 
+            ? `<div class="mt-2 small text-muted"><i class="bi bi-globe me-1 text-primary"></i><strong>Company Profile / Website:</strong> <a href="${companyWebsite.startsWith('http') ? companyWebsite : 'https://' + companyWebsite}" target="_blank" class="fw-semibold text-decoration-none">${companyWebsite} <i class="bi bi-box-arrow-up-right small"></i></a></div>`
+            : '';
+
         const summaryContainer = document.getElementById('reviewSummaryContent');
         summaryContainer.innerHTML = `
             <div class="row g-3">
@@ -1097,6 +1116,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     <h5 class="fw-bold text-dark mb-1">${title}</h5>
                     <div class="text-muted small mb-2"><i class="bi bi-tag me-1"></i>${empType} &bull; Priority: <span class="badge bg-secondary">${priority}</span></div>
                     <div class="mb-3">${tradesHtml}</div>
+                    ${websiteHtml}
                 </div>
                 <div class="col-md-4 text-md-end">
                     <span class="text-muted small text-uppercase fw-semibold d-block">Total Vacancies</span>

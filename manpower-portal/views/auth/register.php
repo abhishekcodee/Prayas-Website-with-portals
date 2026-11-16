@@ -292,6 +292,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <?php if (isset($fieldErrors['industry_type'])): ?><div class="invalid-feedback"><?= e($fieldErrors['industry_type']) ?></div><?php endif; ?>
                     </div>
                     <div class="col-md-6">
+                        <label class="form-label-custom">Company Profile / Website Link</label>
+                        <input type="url" class="form-control form-control-custom" name="website" value="<?= e($_POST['website'] ?? '') ?>" placeholder="https://www.company.com or online profile">
+                        <div class="form-text small">Corporate website or official public company profile URL.</div>
+                    </div>
+                    <div class="col-md-6">
                         <label class="form-label-custom">State <span class="text-danger">*</span></label>
                         <input type="text" class="form-control form-control-custom <?= isset($fieldErrors['state']) ? 'is-invalid' : '' ?>" name="state" value="<?= e($_POST['state'] ?? 'Maharashtra') ?>" required>
                         <?php if (isset($fieldErrors['state'])): ?><div class="invalid-feedback"><?= e($fieldErrors['state']) ?></div><?php endif; ?>

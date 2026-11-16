@@ -148,6 +148,7 @@ class AuthController
         $companyName = trim((string)($data['company_name'] ?? ''));
         $regNumber   = trim((string)($data['registration_number'] ?? ''));
         $indType     = trim((string)($data['industry_type'] ?? ''));
+        $website     = trim((string)($data['website'] ?? ''));
         $address     = trim((string)($data['address'] ?? ''));
         $state       = trim((string)($data['state'] ?? ''));
         $district    = trim((string)($data['district'] ?? ''));
@@ -211,14 +212,15 @@ class AuthController
 
             // Insert Company
             $compStmt = $this->pdo->prepare("INSERT INTO `companies` 
-                (`company_name`, `registration_number`, `industry_type`, `address`, `state`, `district`, `city`, `pincode`, `hr_contact_name`, `hr_contact_phone`, `hr_contact_email`, `verification_status`) 
+                (`company_name`, `registration_number`, `industry_type`, `website`, `address`, `state`, `district`, `city`, `pincode`, `hr_contact_name`, `hr_contact_phone`, `hr_contact_email`, `verification_status`) 
                 VALUES 
-                (:name, :reg, :type, :addr, :state, :dist, :city, :pin, :hr_name, :hr_phone, :hr_email, 'Pending')");
+                (:name, :reg, :type, :web, :addr, :state, :dist, :city, :pin, :hr_name, :hr_phone, :hr_email, 'Pending')");
 
             $compStmt->execute([
                 ':name'     => $companyName,
                 ':reg'      => !empty($regNumber) ? $regNumber : null,
                 ':type'     => $indType,
+                ':web'      => !empty($website) ? $website : null,
                 ':addr'     => $address,
                 ':state'    => $state,
                 ':dist'     => $district,

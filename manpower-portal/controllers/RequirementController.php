@@ -276,6 +276,7 @@ class RequirementController
                     `department` = :dept,
                     `industry_sector` = :sector,
                     `requirement_purpose` = :purpose,
+                    `company_website` = :company_website,
                     `title` = :title,
                     `quantity_required` = :qty,
                     `qualification` = :qual,
@@ -336,6 +337,7 @@ class RequirementController
                     ':dept'       => $data['department'] ?? null,
                     ':sector'     => $data['industry_sector'] ?? null,
                     ':purpose'    => $data['requirement_purpose'] ?? null,
+                    ':company_website' => !empty($data['company_website']) ? trim((string)$data['company_website']) : null,
                     ':title'      => $title,
                     ':qty'        => $quantity,
                     ':qual'       => $data['qualification'] ?? 'ITI',
@@ -402,7 +404,7 @@ class RequirementController
                 $reqCode = $this->generateRequirementCode();
 
                 $insertSql = "INSERT INTO `manpower_requirements` 
-                    (`requirement_id`, `company_id`, `plant_id`, `department`, `industry_sector`, `requirement_purpose`, 
+                    (`requirement_id`, `company_id`, `plant_id`, `department`, `industry_sector`, `requirement_purpose`, `company_website`, 
                      `title`, `quantity_required`, `qualification`, `board_type`, `passing_year_from`, `passing_year_to`, 
                      `experience_required`, `job_location_state`, `job_location_district`, `job_location_city`, `job_location_pincode`, 
                      `job_description`, `min_age`, `max_age`, `gender_preference`, `min_salary`, `max_salary`, `in_hand_salary`, 
@@ -415,7 +417,7 @@ class RequirementController
                      `contact_person`, `contact_email`, `contact_phone`, `status`, " . ($targetStatus === 'APPROVED' ? "`approved_by`, `approved_at`," : "") . "
                      `wizard_step`, `created_by`) 
                     VALUES 
-                    (:code, :cid, :pid, :dept, :sector, :purpose, 
+                    (:code, :cid, :pid, :dept, :sector, :purpose, :company_website, 
                      :title, :qty, :qual, :board, :pfrom, :pto, 
                      :exp, :state, :district, :city, :pin, 
                      :desc, :min_age, :max_age, :gender, :min_sal, :max_sal, :in_hand, 
@@ -435,6 +437,7 @@ class RequirementController
                     ':dept'       => $data['department'] ?? null,
                     ':sector'     => $data['industry_sector'] ?? null,
                     ':purpose'    => $data['requirement_purpose'] ?? null,
+                    ':company_website' => !empty($data['company_website']) ? trim((string)$data['company_website']) : null,
                     ':title'      => $title,
                     ':qty'        => $quantity,
                     ':qual'       => $data['qualification'] ?? 'ITI',
