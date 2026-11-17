@@ -59,17 +59,17 @@ header.website-header .logo {
   text-decoration: none !important;
 }
 header.website-header .logo img {
-  height: 44px !important;
+  height: 56px !important;
   width: auto !important;
   display: block !important;
   object-fit: contain !important;
 }
 @media (max-width: 768px) {
-  header.website-header .logo img { height: 40px !important; }
+  header.website-header .logo img { height: 48px !important; }
 }
 @media (max-width: 540px) {
   header.website-header .nav-row { padding: 13px 18px !important; }
-  header.website-header .logo img { height: 36px !important; }
+  header.website-header .logo img { height: 42px !important; }
 }
 header.website-header nav.desktop-nav {
   display: flex !important;
