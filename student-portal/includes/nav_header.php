@@ -30,10 +30,6 @@ $url_portal_logout = $rel_prefix . "logout.php";
     <div class="nav-container">
         <a href="<?php echo $url_home; ?>" class="prayas-logo-link">
             <img src="<?php echo $rel_prefix; ?>assets/images/prayas-logo.png" alt="PRAYAS Logo" class="prayas-logo-img" onerror="this.onerror=null; this.src='<?php echo $rel_site_prefix; ?>images/logo-mark.png';">
-            <div class="logo-text-group">
-                <span class="logo-title">PRAYAS</span>
-                <span class="logo-sub">Building India's Manufacturing Workforce</span>
-            </div>
         </a>
 
         <button class="nav-hamburger" id="navHamburger" aria-label="Toggle Navigation">
