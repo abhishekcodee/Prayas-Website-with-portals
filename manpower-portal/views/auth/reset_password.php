@@ -15,7 +15,7 @@ $error = '';
 $success = '';
 
 if (empty($token) || empty($email)) {
-    header("Location: /views/auth/forgot_password.php?error=" . urlencode("Invalid or missing password reset token."));
+    header("Location: " . app_url('/views/auth/forgot_password.php') . "?error=" . urlencode("Invalid or missing password reset token."));
     exit;
 }
 
@@ -88,7 +88,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     </style>
 </head>
-<body class="d-flex align-items-center justify-content-center py-4">
+<body class="py-4">
+<?php require_once __DIR__ . '/../../includes/portal_header.php'; ?>
 
 <div class="container">
     <div class="row justify-content-center">

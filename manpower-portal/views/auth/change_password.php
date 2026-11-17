@@ -97,7 +97,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     </style>
 </head>
-<body class="d-flex align-items-center justify-content-center py-4">
+<body class="py-4">
+<?php require_once __DIR__ . '/../../includes/portal_header.php'; ?>
 
 <div class="container">
     <div class="row justify-content-center">

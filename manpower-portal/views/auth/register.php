@@ -229,15 +229,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 <body>
 
-    <div class="portal-topbar">
-        <a href="<?= app_url('/views/auth/login.php') ?>" class="back-link">
-            <i class="bi bi-arrow-left"></i>
-            <span>Back to Sign In</span>
-        </a>
-        <div class="text-white-50" style="font-size: 0.82rem;">
-            Enterprise Partner Onboarding
-        </div>
-    </div>
+    <!-- Header Navigation (Matches Official Website Header) -->
+    <?php require_once __DIR__ . '/../../includes/portal_header.php'; ?>
 
     <div class="reg-card">
         <div class="reg-header">

@@ -973,41 +973,8 @@ if ($candidate_photo !== 'assets/images/logo.png' && file_exists($candidate_phot
 </head>
 <body>
 
-<!-- Header Navbar -->
-<header class="dash-navbar">
-    <div class="dash-navbar-inner">
-        <a href="../index.html" class="dash-logo-box">
-            <img src="assets/images/prayas-logo.png" alt="PRAYAS Logo" class="dash-logo-img">
-        </a>
-
-        <nav class="dash-nav-links" aria-label="Main Navigation">
-            <a href="../index.html">Home</a>
-            <a href="../about.html">About Us</a>
-            <a href="../employers.html">Employers &amp; MSMEs</a>
-            <a href="../students.html">Students</a>
-            <a href="../impact-stories.html">Impact &amp; Stories</a>
-            <a href="../contact.html">Contact</a>
-        </nav>
-
-        <div class="dash-header-actions">
-            <div class="dash-user-pill">
-                <div class="dash-avatar-wrapper">
-                    <img src="<?php echo htmlspecialchars($candidate_photo_url); ?>" alt="User Avatar" class="dash-avatar-img">
-                    <span class="dash-online-dot"></span>
-                </div>
-                <div class="dash-user-meta">
-                    <span class="dash-user-name"><?php echo htmlspecialchars($user['full_name']); ?></span>
-                    <span class="dash-user-reg"><?php echo htmlspecialchars($user['registration_no']); ?></span>
-                </div>
-            </div>
-
-            <a href="logout.php" class="btn-dash-logout" title="Sign Out">
-                <i class="fa-solid fa-right-from-bracket"></i>
-                <span>Logout</span>
-            </a>
-        </div>
-    </div>
-</header>
+<!-- Header Navbar (Matches Official Website Header) -->
+<?php require_once __DIR__ . '/includes/nav_header.php'; ?>
 
 <!-- Main Content Area -->
 <main class="dash-main">

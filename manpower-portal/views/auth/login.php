@@ -614,18 +614,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 <body>
 
-    <!-- Header Navigation -->
-    <header class="portal-topbar">
-        <a href="<?= app_url('/index.html') ?>" class="back-link">
-            <i class="bi bi-arrow-left"></i>
-            <span>Return to PRAYAS Website</span>
-        </a>
-
-        <div class="status-badge" title="Authenticated Industrial Gateway">
-            <span class="status-dot"></span>
-            <span>Enterprise Gateway • TLS 1.3</span>
-        </div>
-    </header>
+    <!-- Header Navigation (Matches Official Website Header) -->
+    <?php require_once __DIR__ . '/../../includes/portal_header.php'; ?>
 
     <!-- Main Auth Center Container -->
     <main class="portal-wrapper">

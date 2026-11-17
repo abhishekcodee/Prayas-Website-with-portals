@@ -32,17 +32,7 @@ $fromSummary = isset($_GET['from']) && $_GET['from'] == "summary";
 
 <body>
 
-<header class="prayas-header">
-    <div class="prayas-header-inner">
-        <a href="../../index.html" class="prayas-brand">
-            <img src="../assets/images/prayas-logo.png" alt="PRAYAS - The Automation Academy" class="prayas-logo">
-        </a>
-
-        <a href="../../index.html" class="btn-back-website">
-            <i class="fa-solid fa-arrow-left"></i> Back to Website
-        </a>
-    </div>
-</header>
+<?php require_once __DIR__ . '/../includes/nav_header.php'; ?>
 
 <div class="container py-5">
     <div class="row justify-content-center">

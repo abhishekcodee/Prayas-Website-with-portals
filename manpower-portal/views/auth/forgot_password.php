@@ -189,6 +189,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </style>
 </head>
 <body>
+<?php require_once __DIR__ . '/../../includes/portal_header.php'; ?>
 
 <div class="auth-card">
     <div class="auth-header">

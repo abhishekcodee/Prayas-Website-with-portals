@@ -115,25 +115,7 @@ if (isset($_POST['login'])) {
 </head>
 <body>
 
-<header class="prayas-header">
-    <div class="prayas-header-inner">
-        <a href="../index.html" class="prayas-brand">
-            <img src="assets/images/prayas-logo.png" alt="PRAYAS - The Automation Academy" class="prayas-logo">
-        </a>
-
-        <nav class="nav__links" aria-label="Main Navigation">
-            <a href="../index.html">Home</a>
-            <a href="../about.html">About Us</a>
-            <a href="../employers.html">Employers & MSMEs</a>
-            <a href="../students.html">Students</a>
-            <a href="../contact.html">Contact</a>
-        </nav>
-
-        <a href="../index.html" class="btn-back-website">
-            <i class="fa-solid fa-arrow-left"></i> Back to Website
-        </a>
-    </div>
-</header>
+<?php require_once __DIR__ . '/includes/nav_header.php'; ?>
 
 <main class="portal-main-wrapper">
     <div class="portal-split-card">

@@ -24,23 +24,7 @@ if (!isset($_SESSION['user_id'])) {
 </head>
 
 <body class="bg-light">
-
-<header class="prayas-header">
-
-    <div class="prayas-header-inner">
-
-        <div class="prayas-brand">
-
-            <img
-                src="../../assets/images/prayas-logo.png"
-                alt="PRAYAS - The Automation Academy"
-                class="prayas-logo">
-
-        </div>
-
-    </div>
-
-</header>
+<?php require_once __DIR__ . '/../../includes/nav_header.php'; ?>
 
 <div class="container py-5">
 
