@@ -26,8 +26,9 @@ $is_manpower_logged_in = !empty($_SESSION['auth_user']) || !empty($_SESSION['ind
 ?>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+<link rel="stylesheet" href="<?= $site_root ?>assets/i18n/i18n.css">
 
 <style>
 header.website-header {
@@ -206,48 +207,53 @@ header.website-header .mobile-menu a {
       <img src="<?= $url_logo ?>" alt="PRAYAS Logo">
     </a>
     <nav class="desktop-nav">
-      <a href="<?= $url_home ?>">Home</a>
+      <a href="<?= $url_home ?>" data-i18n="k003">Home</a>
       <span class="dd">
-        <a href="<?= $url_about ?>">About Us &#9662;</a>
+        <a href="<?= $url_about ?>" data-i18n="k004">About Us &#9662;</a>
         <div>
-          <a href="<?= $url_about ?>#about-why">Why PRAYAS?</a>
-          <a href="<?= $url_about ?>#about-vision">Vision &amp; Purpose</a>
-          <a href="<?= $url_about ?>#about-mission">Mission &amp; Impact</a>
-          <a href="<?= $url_about ?>#about-collaboration">Collaboration</a>
-          <a href="<?= $url_about ?>#about-career">Career</a>
-          <a href="<?= $url_contact ?>">Contact Us</a>
+          <a href="<?= $url_about ?>#about-why" data-i18n="k005">Why PRAYAS?</a>
+          <a href="<?= $url_about ?>#about-vision" data-i18n="k006">Vision &amp; Purpose</a>
+          <a href="<?= $url_about ?>#about-mission" data-i18n="k007">Mission &amp; Impact</a>
+          <a href="<?= $url_about ?>#about-collaboration" data-i18n="k008">Collaboration</a>
+          <a href="<?= $url_about ?>#about-career" data-i18n="k009">Career</a>
+          <a href="<?= $url_contact ?>" data-i18n="k010">Contact Us</a>
         </div>
       </span>
-      <a href="<?= $url_students ?>">Student</a>
-      <a href="<?= $url_employers ?>" class="active">MSME</a>
+      <a href="<?= $url_students ?>" data-i18n="k011">Student</a>
+      <a href="<?= $url_employers ?>" class="active" data-i18n="k012">MSME</a>
       <span class="dd">
-        <a href="<?= $url_resources ?>">Resources &#9662;</a>
+        <a href="<?= $url_resources ?>" data-i18n="k013">Resources &#9662;</a>
         <div>
-          <a href="<?= $url_resources ?>#vlog">Vlog</a>
-          <a href="<?= $url_resources ?>#blog">Blog</a>
-          <a href="<?= $url_resources ?>#study">Study Material</a>
-          <a href="<?= $url_resources ?>#events">Events</a>
-          <a href="<?= $url_resources ?>#gallery">Gallery</a>
+          <a href="<?= $url_resources ?>#vlog" data-i18n="k014">Vlog</a>
+          <a href="<?= $url_resources ?>#blog" data-i18n="k015">Blog</a>
+          <a href="<?= $url_resources ?>#study" data-i18n="k016">Study Material</a>
+          <a href="<?= $url_resources ?>#events" data-i18n="k017">Events</a>
+          <a href="<?= $url_resources ?>#gallery" data-i18n="k018">Gallery</a>
         </div>
       </span>
-      <a href="<?= $url_contact ?>">Contact</a>
+      <a href="<?= $url_contact ?>" data-i18n="k019">Contact</a>
     </nav>
     <div class="nav-ctas">
-      <a href="<?= $url_manpower ?>" class="btn btn-secondary btn-small">Hire Talent</a>
-      <a href="<?= $url_student_portal ?>" class="btn btn-primary btn-small">Enroll Now</a>
-      <button class="hamburger" onclick="const m = document.getElementById('manpower-mmenu'); if (m) m.classList.toggle('open');" aria-label="Menu">
+      <a href="<?= $url_manpower ?>" class="btn btn-secondary btn-small" data-i18n="k020">Hire Talent</a>
+      <a href="<?= $url_student_portal ?>" class="btn btn-primary btn-small" data-i18n="k021">Enroll Now</a>
+      <div class="lang-switcher" data-i18n-switcher><button type="button" class="lang-btn" aria-haspopup="listbox" aria-expanded="false" aria-label="Language: English"><svg class="lang-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg><span class="lang-current">EN</span><span class="lang-caret" aria-hidden="true">▾</span></button><div class="lang-menu" role="listbox" aria-label="Select language"><button type="button" class="lang-option" role="option" data-lang="en" aria-selected="true"><span>English</span><span class="lang-code">EN</span></button><button type="button" class="lang-option" role="option" data-lang="hi" aria-selected="false"><span>हिंदी</span><span class="lang-code">HI</span></button><button type="button" class="lang-option" role="option" data-lang="mr" aria-selected="false"><span>मराठी</span><span class="lang-code">MR</span></button></div></div>
+      <button class="hamburger" onclick="const m = document.getElementById('manpower-mmenu'); if (m) m.classList.toggle('open');" aria-label="Menu" data-i18n-aria="k022">
         <span></span><span></span><span></span>
       </button>
     </div>
   </div>
   <div class="mobile-menu" id="manpower-mmenu">
-    <a href="<?= $url_home ?>">Home</a>
-    <a href="<?= $url_about ?>">About Us</a>
-    <a href="<?= $url_students ?>">Student</a>
-    <a href="<?= $url_employers ?>">MSME</a>
-    <a href="<?= $url_resources ?>">Resources</a>
-    <a href="<?= $url_contact ?>">Contact</a>
-    <a href="<?= $url_manpower_login ?>" style="color:#0f4c81;font-weight:700">Industry Partner Login</a>
-    <a href="<?= $url_student_portal ?>" style="color:#e8622c;font-weight:700">Student Portal</a>
+    <a href="<?= $url_home ?>" data-i18n="k003">Home</a>
+    <a href="<?= $url_about ?>" data-i18n="k023">About Us</a>
+    <a href="<?= $url_students ?>" data-i18n="k011">Student</a>
+    <a href="<?= $url_employers ?>" data-i18n="k012">MSME</a>
+    <a href="<?= $url_resources ?>" data-i18n="k024">Resources</a>
+    <a href="<?= $url_contact ?>" data-i18n="k019">Contact</a>
+    <a href="<?= $url_manpower_login ?>" style="color:#0f4c81;font-weight:700" data-i18n="portal.industry_login">Industry Partner Login</a>
+    <a href="<?= $url_student_portal ?>" style="color:#e8622c;font-weight:700" data-i18n="portal.student_portal">Student Portal</a>
   </div>
 </header>
+<script src="<?= $site_root ?>assets/i18n/en.js"></script>
+<script src="<?= $site_root ?>assets/i18n/hi.js"></script>
+<script src="<?= $site_root ?>assets/i18n/mr.js"></script>
+<script src="<?= $site_root ?>assets/i18n/i18n.js"></script>
