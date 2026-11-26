@@ -1,0 +1,10 @@
+User-agent: *
+Disallow: /student-portal/
+Disallow: /manpower-portal/
+Disallow: /admin/
+Disallow: /api/
+Disallow: /config/
+Disallow: /database/
+Disallow: /tests/
+
+Sitemap: https://prayas-academy.com/sitemap.xml

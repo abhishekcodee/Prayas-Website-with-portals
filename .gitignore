@@ -26,3 +26,8 @@ student-portal/vendor/
 .DS_Store
 Thumbs.db
 .vscode/
+
+# Database dumps and setup secrets (never commit personal data)
+*.sql.gz
+manpower-portal/database/backups/
+manpower-portal/database/seeders/.initial_admin_setup.txt
