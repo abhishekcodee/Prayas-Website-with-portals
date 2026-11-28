@@ -1,0 +1,22 @@
+/* Footer social media icons (used on every public page) */
+.footer-social-icons{display:flex;flex-wrap:wrap;gap:12px;margin-top:16px !important;}
+.footer-social-icons .social-link{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:40px;height:40px;border-radius:50%;
+  background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);
+  color:#c7cede !important;text-decoration:none;
+  transition:transform .2s ease,background .2s ease,color .2s ease,border-color .2s ease,box-shadow .2s ease;
+}
+.footer-social-icons .social-link svg{width:18px;height:18px;display:block;}
+.footer-social-icons .social-link:hover,
+.footer-social-icons .social-link:focus-visible{
+  transform:translateY(-3px);color:#fff !important;border-color:transparent;
+  box-shadow:0 8px 20px rgba(0,0,0,.35);outline:none;
+}
+.footer-social-icons .social-link:focus-visible{box-shadow:0 0 0 3px rgba(255,154,98,.6);}
+.footer-social-icons .s-facebook:hover,.footer-social-icons .s-facebook:focus-visible{background:#1877f2;}
+.footer-social-icons .s-x:hover,.footer-social-icons .s-x:focus-visible{background:#000;}
+.footer-social-icons .s-instagram:hover,.footer-social-icons .s-instagram:focus-visible{background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);}
+.footer-social-icons .s-linkedin:hover,.footer-social-icons .s-linkedin:focus-visible{background:#0a66c2;}
+.footer-social-icons .s-youtube:hover,.footer-social-icons .s-youtube:focus-visible{background:#ff0000;}
+@media (prefers-reduced-motion:reduce){.footer-social-icons .social-link{transition:none;}}
